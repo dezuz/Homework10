@@ -1,11 +1,9 @@
 package com.mateacademy.homework10;
 
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class REUtil {
-    private final Logger logger = Logger.getLogger(REUtil.class.getName());
 
     public static boolean validator(String validatorType, String string) {
         if (validatorType.equals("phone number")) {

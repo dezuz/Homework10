@@ -1,12 +1,16 @@
 package com.mateacademy.homework10;
 
-
 import org.apache.log4j.Logger;
 
 import java.beans.XMLEncoder;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.HashMap;
 
 public class XMLCollection {
     private static final String ENCODED_FILE_NAME = "Collection.xml";
