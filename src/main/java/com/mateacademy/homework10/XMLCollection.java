@@ -14,8 +14,9 @@ import java.util.HashMap;
 
 public class XMLCollection {
     private static final String ENCODED_FILE_NAME = "Collection.xml";
+    private static final Logger LOGGER = Logger.getLogger(XMLCollection.class);
     private List<Map<List<Set<Integer>>, String>> list;
-    private final Logger LOGGER = Logger.getLogger(XMLCollection.class);
+    private XMLEncoder xmlEncoder;
 
     public void fillList() {
         list = new ArrayList<>();
@@ -34,11 +35,13 @@ public class XMLCollection {
 
     private void encodeToXML(List list) {
         try {
-            XMLEncoder xmlEncoder = new XMLEncoder(new FileOutputStream(ENCODED_FILE_NAME));
+            xmlEncoder = new XMLEncoder(new FileOutputStream(ENCODED_FILE_NAME));
             xmlEncoder.writeObject(list);
-            xmlEncoder.close();
         } catch (FileNotFoundException e) {
             LOGGER.error("File is not found");
+        }
+        finally {
+            xmlEncoder.close();
         }
     }
 
